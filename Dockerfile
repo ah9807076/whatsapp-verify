@@ -13,8 +13,8 @@ RUN npm install --only=production
 # Copy local code to the container image.
 COPY . .
 
-# Expose the port the app runs on.
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Run the web service on container startup.
-CMD ["npm", "start"]
+# Run the web service on container startup with debug logging
+CMD ["npm", "start", "--log-level=debug"]
