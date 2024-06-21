@@ -33,4 +33,5 @@ app.post("/checknumber", async (req, res) => {
 
 app.listen(process.env.PORT || 3000, () => {
     console.log(`Started Server on port ${process.env.PORT || 3000}`);
+    console.log(`Running in environment: ${process.env.NODE_ENV}`);
 });
