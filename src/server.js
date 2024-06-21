@@ -7,6 +7,17 @@ app.use(bodyParser.json());
 const checkNumber = require("./utils/checkNumber");
 const checkNumberBulk = require("./utils/checkNumberBulk");
 
+// Health check endpoint
+app.get("/", (req, res) => {
+    res.send("API is running");
+});
+
+// Logging middleware for better diagnostics
+app.use((req, res, next) => {
+    console.log(`${req.method} ${req.url}`);
+    next();
+});
+
 // Check Single Number
 app.get("/checknumber", async (req, res) => {
     const { phoneNumber } = req.query;
